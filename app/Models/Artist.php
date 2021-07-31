@@ -10,6 +10,11 @@ class Artist extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'name', 'bio', 'photo'
     ];
+
+    public function album()
+    {
+        return $this->hasMany(Album::class);
+    }
 }
